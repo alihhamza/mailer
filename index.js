@@ -4,14 +4,20 @@ const app = express();
 
 const PORT = process.env.APP_PORT || 5000;
 
+/* Middleware */
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+
 /* Controllers */
-const sendMail = require('./controllers/sendMail');
+const mailerController = require('./controllers/mailerController');
 
 app.get("/", (req, res) => {
     res.send("I am server");
 });
 
-app.get("/send-mail", sendMail);
+app.get("/send-mail", mailerController.sendMail);
+app.post("/communication", mailerController.communicationMail);
 
 
 const server = async () => {
