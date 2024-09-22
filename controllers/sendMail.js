@@ -6,7 +6,7 @@ const SMTP_HOST = process.env.APP_SMTP_HOST;
 const SMTP_PORT = process.env.APP_SMTP_PORT;
 const SMTP_USER = process.env.APP_SMTP_USER;
 const SMTP_PASS = process.env.APP_SMTP_PASS;
-const SMTP_EMAIL_TO = process.env.APP_SMTP_EMAIL_TO;
+const SMTP_EMAIL_TO = process.env.APP_SMTP_EMAIL_FROM;
 
 const transporter = nodemailer.createTransport({
     host: SMTP_HOST,
